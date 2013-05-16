@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% load i18n %}
+
+
+{% block title %}{% trans "Engineering Unit :: home" %}{% endblock %}
+{% block body_class %}{{ block.super }} home {% endblock %}
+
+{% block extra_javascript %}
+    <script type="text/javascript">
+    </script>
+{% endblock %}
+
+{% block content %}
+    Hello Engineering Unit
+{% endblock content %}
+
+{% block pre_body %}
+
+{% endblock  %}
+
+{% block post_body %}
+    {{ block.super }}
+{% endblock post_body %}
