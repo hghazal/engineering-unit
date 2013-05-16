@@ -114,7 +114,7 @@ COMPRESS_URL = STATIC_URL
 COMPRESS_ROOT = STATIC_ROOT
 COMPRESS_DEBUG_TOGGLE = 'nocompress'
 COMPRESS_CSS_HASHING_METHOD = 'content'
-
+COMPRESS_ENABLED = True
 
 #==============================================================================
 # Templates
