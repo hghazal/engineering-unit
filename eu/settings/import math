@@ -1,0 +1,78 @@
+import math
+import logging
+import string
+import datetime
+import random
+from uuid import uuid4
+
+class KeyGenerator(object):
+
+    SPECIAL_CHARACTERS = ".$"
+    ALPHA = string.ascii_lowercase + string.digits
+    HEX_DIGITS = string.digits + 'abcdef'
+
+    @classmethod
+    def generate(cls, length, lowercase=False, special_chars=True):
+        """Key Generator that returns a random keystring.
+
+        Arguments:
+        ----------
+        length: A integer indicating how long the key should be.
+
+        Returns:
+        --------
+        a string containing the generated key
+        """
+        if type(length) is not int:
+            raise TypeError("`length` is expected to be an int between 1 and 128")
+
+        if length < 1 or length > 128:
+            raise OverflowError("`length` is expected to be an int between 1 and 128")
+
+        result = []
+
+        if lowercase:
+            random_hex = cls._generate_random_hex(length * 2)
+            # array_of_2hex_digits will always be even since uuid4().hex will always be even
+            array_of_2hex_digits = cls._split_array_into_fixed_sized_chunks(random_hex, 2)
+            random_alpha_array = list(cls.ALPHA)
+
+        else:
+            if special_chars:
+                random_alpha_array = list(cls.ALPHA + SPECIAL_CHARACTERS + string.ascii_uppercase)
+            else:
+                random_alpha_array = list(cls.ALPHA + string.ascii_uppercase)
+
+            random_hex = cls._generate_random_hex(length * 4)
+            # array_of_2hex_digits will always be even since uuid4().hex will always be even
+            array_of_2hex_digits = cls._split_array_into_fixed_sized_chunks(random_hex, 4)
+
+
+        random.shuffle(random_alpha_array)
+        # digits will always be even since arrary_of_2hex_digits will always be even
+        for digits in array_of_2hex_digits:
+            alpha_index = 0
+            for digit in digits:
+                alpha_index += cls.HEX_DIGITS.index(digit)
+
+            # add overflow protection
+            alpha_index = alpha_index % len(random_alpha_array)
+
+            value = random_alpha_array[alpha_index]
+            result.append(value)
+
+        result = ''.join(result)
+
+        return result[:length]
+
+    @classmethod
+    def _split_array_into_fixed_sized_chunks(cls, array, chunk_size):
+        """ Yield successive `chunk_sized` chunks from array."""
+        for i in xrange(0, len(array), chunk_size):
+            yield array[i:i + chunk_size]
+
+    @classmethod
+    def _generate_random_hex(cls, length):
+        uuid_rounds = int(math.ceil(length / 32.0))
+        random_hex = ''.join([uuid4().hex for i in xrange(uuid_rounds)])
+        return random_hex

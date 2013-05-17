@@ -1,5 +1,5 @@
 import os
-# import dj_database_url
+import dj_database_url
 
 #==============================================================================
 # Calculation of directories relative to the project module location
@@ -70,9 +70,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
-# DATABASES = {
-#     'default': dj_database_url.config(default='mysql://eu:eu@localhost/eu'),
-# }
+DATABASES = {
+    'default': dj_database_url.config(default='mysql://eu:enggunit@localhost/eu'),
+}
 
 #==============================================================================
 # Project URLS and media settings
@@ -155,8 +155,11 @@ WSGI_APPLICATION = 'eu.wsgi.application'
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+ALLOWED_HOSTS = [
+    '*',
+]
 #==============================================================================
-# Logging
+# Loggingx
 #==============================================================================
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
@@ -179,7 +182,7 @@ LOGGING = {
         'mainlog': {
             'class': 'logging.handlers.WatchedFileHandler',
             'filename': LOG_LOCATION,
-            'formatter': 'verbose',
+            # 'formatter': 'verbose',
         },
     },
     'loggers': {
