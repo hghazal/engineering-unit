@@ -1,1 +1,1 @@
-web: gunicorn eu.wsgi:application
+web: python manage.py run_gunicorn --settings=eu.settings.production
