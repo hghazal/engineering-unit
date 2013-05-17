@@ -6,7 +6,7 @@ import dj_database_url
 #==============================================================================
 
 PROJECT_ROOT = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), os.pardir)
+    os.path.join(os.path.dirname(__file__), os.pardir, os.pardir)
 )
 
 #==============================================================================
@@ -163,7 +163,7 @@ ALLOWED_HOSTS = [
 #==============================================================================
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
-LOG_LOCATION = os.path.join(PROJECT_ROOT, "../logs/django.log").replace("\\", "/")
+LOG_LOCATION = os.path.join(PROJECT_ROOT, "logs/django.log").replace("\\", "/")
 
 LOGGING = {
     'version': 1,
