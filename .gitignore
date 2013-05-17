@@ -31,4 +31,4 @@ pip-log.txt
 # Misc
 *.DS_Store
 *.swp
-
+logs
