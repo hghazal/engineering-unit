@@ -81,7 +81,7 @@ def compress():
     with prefix('source {0}bin/activate'.format(env.virtualenv)):
         with cd(env.code_dir):
             with cd('repo'):
-                run('python ./manage.py compress')
+                run('DOMAIN="prod" python ./manage.py compress --force')
 
 @task
 def compile_pyc():
