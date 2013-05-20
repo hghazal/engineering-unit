@@ -13,7 +13,7 @@ PROJECT_ROOT = os.path.abspath(
 # Generic Django project settings
 #==============================================================================
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 INTERNAL_IPS = ('127.0.0.1',)
 
@@ -109,7 +109,7 @@ COMPRESS_PRECOMPILERS = (
 )
 
 COMPRESS_OUTPUT_DIR = ""
-COMPRESS_OFFLINE = True
+COMPRESS_OFFLINE = False
 COMPRESS_URL = STATIC_URL
 COMPRESS_ROOT = STATIC_ROOT
 COMPRESS_DEBUG_TOGGLE = 'nocompress'
