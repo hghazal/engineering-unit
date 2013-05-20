@@ -13,44 +13,56 @@
     {% block head %}{% endblock %}
 
     <link rel="icon" href="{{ STATIC_URL }}img/favicon.png">
-    <title>EngineeringUnit &bull; {% block title %}{% endblock %}</title>
+    <title>Engineering Unit &bull; {% block title %}{% endblock %}</title>
 
     {% compress css %}
-      <link rel="stylesheet" type="text/less" href="{{ STATIC_URL }}less/bootstrap/bootstrap.less" />
       <link rel="stylesheet" type="text/less" href="{{ STATIC_URL }}less/eu.less" />
+      <link rel="stylesheet" type="text/less" href="{{ STATIC_URL }}less/font-awesome/css/font-awesome.css" />
     {% endcompress %}
     {% block stylesheets %}{% endblock %}
 
     {% block extra_head %}{% endblock %}
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.png">
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
-  {% block device_detection %}
-    <script type="text/javascript">
-      if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
-        $('body').addClass('device-ios');
-      }
-      if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-        $('body').addClass('device-touch');
-      }
-    </script>
-  {% endblock %}
   {% block debug_stuff %}{% endblock %}
   {% block pre_body %}{% endblock %}
   {% block sys_alert %}{% endblock %}
 
   {% block body_override %}
     {% include "includes/topbar.html"%}
-
-    <div id="content" class="container">
       {% block content %}{% endblock content %}
-    </div>
     {% include "includes/footer.html" %}
 
-    {% compress js %}
+
+      <!-- JS and jQuery -->
+      {% if debug %}
+        {% compress js inline %}
+          <script type="text/javascript" src="{{ STATIC_URL }}js/lib/less/less-1.3.3.min.js"></script>
+        {% endcompress %}
+      {% endif %}
+
+    {% compress js inline %}
+
       <script type="text/javascript" src="{{ STATIC_URL }}js/lib/jquery/jquery-1.9.1.min.js"></script>
-      <script type="text/javascript" src="{{ STATIC_URL }}js/lib/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/lib/bootstrap/bootstrap.js"></script>
+
+      <script type="text/javascript" src="{{ STATIC_URL }}js/lib/flexslider/jquery.flexslider-min.js"></script>
+
+      <script type="text/javascript" src="{{ STATIC_URL }}js/back-to-top.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}js/eu.js"></script>
+
     {% endcompress %}
+
+    {% block extra_javascript %}{% endblock extra_javascript %}
+    {% block javascript_templates %}{% endblock javascript_templates %}
 
 
   {% endblock body_override %}
