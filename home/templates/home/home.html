@@ -7,16 +7,201 @@
 {% block title %}{% trans "Engineering Unit :: home" %}{% endblock %}
 {% block body_class %}{{ block.super }} home {% endblock %}
 
-{% block extra_javascript %}
-    <script type="text/javascript">
-    </script>
-{% endblock %}
 
 {% block content %}
-    Hello Engineering Unit
-{% endblock content %}
 
-{% block pre_body %}
+
+
+    <div class="slider-block">
+
+      <div id="myCarousel" class="carousel slide">
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="active item">
+            <img id="BJfvHRUCYAIH9RL" src="{{ STATIC_URL }}img/home_slider_1.jpeg" alt="">
+            <div class="caption middle-left container">
+              <p class="small white text-dark">Engineering Unit</p>
+              <p class="large green add-space1">Builds the U.A.E's Critical Projects</p>
+              <!--<p class="medium white text-green">Builds the U.A.E's Critical Projects</p> #}
+              <p class="large green add-space1">ON TIME</p>-->
+            </div>
+        </div>
+
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+
+    </div>
+
+    <div class="hero-unit">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <h1><strong class="green">end-to-end</strong> construction solutions</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="row testimonials">
+          <div class="span4">
+            <img class="img-polaroid" src="{{ STATIC_URL }}img/sectors/medical.png" alt="Medical projects in Abu Dhabi">
+            <h2>Medical</h2>
+            <p>Engineering Unit has extensive experience in building, expanding and renovating Hospitals and
+              medical facilities.</p>
+          </div>
+          <div class="span4">
+            <img class="img-polaroid" src="{{ STATIC_URL }}img/sectors/commercial.png" alt="Commercial Projects in UAE">
+            <h2>Commercial</h2>
+            <p>Design &amp; Build services for commercial &amp; government projects is a core competency of Engineering Unit.</p>
+          </div>
+          <div class="span4">
+            <img class="img-polaroid" src="{{ STATIC_URL }}img/sectors/infrastructure.png" alt="Infrasrtrcture Projects in UAE">
+            <h2>Infrastructure</h2>
+            <p>For over 30 years, Engineering Unit has been involved in building UAE's telecom, power, and water infrastructure.</p>
+          </div>
+      </div>
+
+      <div class="section-title">
+        <h2>Our subsidiaries  </h2>
+      </div>
+
+      <!-- TESTIMONIALS 4col -->
+      <div class="row testimonials">
+          <div class="span3">
+            <img src="{{ STATIC_URL }}img/subsidiaries/solidex.png" alt="placeholder+image">
+            <h2>Solidex Industrial</h2>
+            <p>UAE's leading wooden works factory, offers high quality carpentry, interior works and custom furniture.</p>
+          </div>
+          <div class="span3">
+            <img src="{{ STATIC_URL }}img/subsidiaries/lineavista.png" alt="placeholder+image">
+            <h2>LineaVista</h2>
+            <p>LineaVista offers full range of high-end interior design and decoration for commercials and residential interiors.</p>
+          </div>
+          <div class="span3">
+            <img src="{{ STATIC_URL }}img/subsidiaries/goldline.png" alt="placeholder+image">
+            <h2>GoldLine</h2>
+            <p>GoldenLine fulfills the ever growing need for professional gypsum and designed painting services in the Gulf region.</p>
+          </div>
+          <div class="span3">
+            <img src="{{ STATIC_URL }}img/subsidiaries/etu.png" alt="placeholder+image">
+            <h2>Engineering Technical Unit</h2>
+            <p>ETU offers design, fabrication &amp; installation of interior solutions such as: ceilings, walls and column cladding.</p>
+          </div>
+
+      </div>
+    </div><!-- .container -->
+
+     <div class="hero-unit">
+       <div class="container">
+         <div class="row">
+           <div class="span12">
+             <h1>Our Clients</h1>
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+
+     <div class="container">
+
+        <div id="clients-flexslider" class="flexslider home clients">
+          <ul class="slides">
+            <li style="width: 129px; float: left; display: block;">
+              <a href="http://www.adnoc.ae/">
+                <img src="{{ STATIC_URL }}img/clients/adnoc_gray.png" alt="">
+                <img src="{{ STATIC_URL }}img/clients/adnoc.png" class="color-img" alt="">
+              </a>
+            </li>
+            <li style="width: 129px; float: left; display: block;">
+              <a href="http://www.moi.gov.ae/">
+                <img src="{{ STATIC_URL }}img/clients/interior_gray.png" alt="">
+                <img src="{{ STATIC_URL }}img/clients/interior.png" class="color-img" alt="">
+              </a>
+            </li>
+            <li style="width: 129px; float: left; display: block;">
+              <a href="http://www.haad.ae/Haad/">
+                <img src="{{ STATIC_URL }}img/clients/health_gray.png" alt="">
+                <img src="{{ STATIC_URL }}img/clients/health.png" class="color-img" alt="">
+              </a>
+            </li>
+
+            <li style="width: 129px; float: left; display: block;">
+              <a href="http://etisalat.com/">
+                <img src="{{ STATIC_URL }}img/clients/etisalat_gray.png" alt="">
+                <img src="{{ STATIC_URL }}img/clients/etisalat.png" class="color-img" alt="">
+              </a>
+            </li>
+            <li style="width: 129px; float: left; display: block;">
+              <a href="http://www.seha.ae/seha/en/Pages/HospitalDetail.aspx?HospitalId=59/">
+                <img src="{{ STATIC_URL }}img/clients/gharbia_gray.png" alt="">
+                <img src="{{ STATIC_URL }}img/clients/gharbia.png" class="color-img" alt="">
+              </a>
+            </li>
+            <li style="width: 129px; float: left; display: block;">
+              <a href="http://www.musanada.co.ae/">
+                <img src="{{ STATIC_URL }}img/clients/musanada_gray.png" alt="">
+                <img src="{{ STATIC_URL }}img/clients/musanada.png" class="color-img" alt="">
+              </a>
+            </li>
+            <li style="width: 129px; float: left; display: block;">
+              <a href="http://www.skmc.ae/">
+                <img src="{{ STATIC_URL }}img/clients/khalifa_medical_city_gray.png" alt="">
+                <img src="{{ STATIC_URL }}img/clients/khalifa_medical_city.png" class="color-img" alt="">
+              </a>
+            </li>
+            <li style="width: 129px; float: left; display: block;">
+              <a href="http://www.adfca.ae/english/">
+                <img src="{{ STATIC_URL }}img/clients/food_authority_gray.png" alt="">
+                <img src="{{ STATIC_URL }}img/clients/food_authority.png" class="color-img" alt="">
+              </a>
+            </li>
+            <li style="width: 129px; float: left; display: block;">
+              <a href="http://www.secure.ae/english/">
+                <img src="{{ STATIC_URL }}img/clients/secure_gray.png" alt="">
+                <img src="{{ STATIC_URL }}img/clients/secure.png" class="color-img" alt="">
+              </a>
+            </li>
+
+
+          </ul>
+
+        </div>
+     </div>
+
+
+
+
+
+{% endblock  %}
+
+{% block extra_javascript %}
+
+      <script type="text/javascript">
+        $(function() {
+            $('#clients-flexslider').flexslider({
+              animation: "slide",
+              easing: "swing",
+              animationLoop: true,
+              itemWidth: 1,
+              itemMargin: 1,
+              minItems: 2,
+              maxItems: 9,
+              controlNav: false,
+              directionNav: false,
+              move: 2
+            });
+        });
+
+      </script>
+      <!--[if lt IE 9]>
+        <script src="{{ STATIC_URL }}js/respond.js"></script>
+      <![endif]-->
 
 {% endblock  %}
 
