@@ -9,9 +9,6 @@
 
 
 {% block content %}
-
-
-
     <div class="slider-block">
 
       <div id="myCarousel" class="carousel slide">
@@ -45,9 +42,9 @@
       </div>
     </div>
 
-    <div class="container">
-
-      <div class="row testimonials">
+    <div id="specialties" class="container">
+      <!-- Specialties -->
+      <div class="row features">
           <div class="span4">
             <img class="img-polaroid" src="{{ STATIC_URL }}img/sectors/medical.png" alt="Medical projects in Abu Dhabi">
             <h2>Medical</h2>
@@ -64,14 +61,13 @@
             <h2>Infrastructure</h2>
             <p>For over 30 years, Engineering Unit has been involved in building UAE's telecom, power, and water infrastructure.</p>
           </div>
-      </div>
+      </div> <!-- #specialties -->
 
       <div class="section-title">
-        <h2>Our subsidiaries  </h2>
+        <h2>Our Subsidiaries</h2>
       </div>
-
-      <!-- TESTIMONIALS 4col -->
-      <div class="row testimonials">
+      <!-- Subsidiaries -->
+      <div id="subsidiaries" class="row features">
           <div class="span3">
             <img src="{{ STATIC_URL }}img/subsidiaries/solidex.png" alt="placeholder+image">
             <h2>Solidex Industrial</h2>
@@ -93,118 +89,9 @@
             <p>ETU offers design, fabrication &amp; installation of interior solutions such as: ceilings, walls and column cladding.</p>
           </div>
 
-      </div>
-    </div><!-- .container -->
+      </div>  <!--#subsidiaries -->
+    </div>  <!-- .container -->
 
-     <div class="hero-unit">
-       <div class="container">
-         <div class="row">
-           <div class="span12">
-             <h1>Our Clients</h1>
-           </div>
-         </div>
-       </div>
-     </div>
-
-
-
-     <div class="container">
-
-        <div id="clients-flexslider" class="flexslider home clients">
-          <ul class="slides">
-            <li style="width: 129px; float: left; display: block;">
-              <a href="http://www.adnoc.ae/">
-                <img src="{{ STATIC_URL }}img/clients/adnoc_gray.png" alt="">
-                <img src="{{ STATIC_URL }}img/clients/adnoc.png" class="color-img" alt="">
-              </a>
-            </li>
-            <li style="width: 129px; float: left; display: block;">
-              <a href="http://www.moi.gov.ae/">
-                <img src="{{ STATIC_URL }}img/clients/interior_gray.png" alt="">
-                <img src="{{ STATIC_URL }}img/clients/interior.png" class="color-img" alt="">
-              </a>
-            </li>
-            <li style="width: 129px; float: left; display: block;">
-              <a href="http://www.haad.ae/Haad/">
-                <img src="{{ STATIC_URL }}img/clients/health_gray.png" alt="">
-                <img src="{{ STATIC_URL }}img/clients/health.png" class="color-img" alt="">
-              </a>
-            </li>
-
-            <li style="width: 129px; float: left; display: block;">
-              <a href="http://etisalat.com/">
-                <img src="{{ STATIC_URL }}img/clients/etisalat_gray.png" alt="">
-                <img src="{{ STATIC_URL }}img/clients/etisalat.png" class="color-img" alt="">
-              </a>
-            </li>
-            <li style="width: 129px; float: left; display: block;">
-              <a href="http://www.seha.ae/seha/en/Pages/HospitalDetail.aspx?HospitalId=59/">
-                <img src="{{ STATIC_URL }}img/clients/gharbia_gray.png" alt="">
-                <img src="{{ STATIC_URL }}img/clients/gharbia.png" class="color-img" alt="">
-              </a>
-            </li>
-            <li style="width: 129px; float: left; display: block;">
-              <a href="http://www.musanada.co.ae/">
-                <img src="{{ STATIC_URL }}img/clients/musanada_gray.png" alt="">
-                <img src="{{ STATIC_URL }}img/clients/musanada.png" class="color-img" alt="">
-              </a>
-            </li>
-            <li style="width: 129px; float: left; display: block;">
-              <a href="http://www.skmc.ae/">
-                <img src="{{ STATIC_URL }}img/clients/khalifa_medical_city_gray.png" alt="">
-                <img src="{{ STATIC_URL }}img/clients/khalifa_medical_city.png" class="color-img" alt="">
-              </a>
-            </li>
-            <li style="width: 129px; float: left; display: block;">
-              <a href="http://www.adfca.ae/english/">
-                <img src="{{ STATIC_URL }}img/clients/food_authority_gray.png" alt="">
-                <img src="{{ STATIC_URL }}img/clients/food_authority.png" class="color-img" alt="">
-              </a>
-            </li>
-            <li style="width: 129px; float: left; display: block;">
-              <a href="http://www.secure.ae/english/">
-                <img src="{{ STATIC_URL }}img/clients/secure_gray.png" alt="">
-                <img src="{{ STATIC_URL }}img/clients/secure.png" class="color-img" alt="">
-              </a>
-            </li>
-
-
-          </ul>
-
-        </div>
-     </div>
-
-
-
-
+    {% include "includes/our_clients.html" %}
 
 {% endblock  %}
-
-{% block extra_javascript %}
-
-      <script type="text/javascript">
-        $(function() {
-            $('#clients-flexslider').flexslider({
-              animation: "slide",
-              easing: "swing",
-              animationLoop: true,
-              itemWidth: 1,
-              itemMargin: 1,
-              minItems: 2,
-              maxItems: 9,
-              controlNav: false,
-              directionNav: false,
-              move: 2
-            });
-        });
-
-      </script>
-      <!--[if lt IE 9]>
-        <script src="{{ STATIC_URL }}js/respond.js"></script>
-      <![endif]-->
-
-{% endblock  %}
-
-{% block post_body %}
-    {{ block.super }}
-{% endblock post_body %}
